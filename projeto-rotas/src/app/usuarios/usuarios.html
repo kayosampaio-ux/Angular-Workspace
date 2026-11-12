@@ -1,0 +1,30 @@
+<section class="formulario-usuario">
+  <h2>Adicionar usuário</h2>
+
+  <form #formUsuario="ngForm" (ngSubmit)="adicionarUsuario()">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" name="nome" [(ngModel)]="usuario.nome" required />
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" [(ngModel)]="usuario.email" required />
+
+    <button type="submit" [disabled]="formUsuario.invalid">Adicionar usuário</button>
+  </form>
+</section>
+
+<hr>
+<h3>Usuários cadastrados</h3>
+
+<section class="lista-usuarios">
+  @if (usuarios.length > 0) {
+    <ul>
+      @for (usuario of usuarios; track $index) {
+        <li>
+          <strong>{{ usuario.nome }}</strong> — {{ usuario.email }}
+        </li>
+      }
+    </ul>
+  } @else {
+    <p>Nenhum usuário cadastrado.</p>
+  }
+</section>

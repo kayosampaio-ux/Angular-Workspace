@@ -1,0 +1,82 @@
+:host {
+  position: relative;
+  z-index: 1;
+  display: block;
+  padding: 1.05rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: rgb(9 11 16 / 78%);
+  backdrop-filter: blur(18px);
+}
+
+h1 {
+  display: flex;
+  align-items: center;
+  max-width: 62rem;
+  margin: 0 auto 0.8rem;
+  color: var(--text);
+  font-family: Manrope, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -0.025em;
+}
+
+h1::before {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.7rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 15px rgb(99 230 190 / 75%);
+  content: '';
+}
+
+nav {
+  display: flex;
+  max-width: 62rem;
+  margin: 0 auto;
+  gap: 0.35rem;
+}
+
+a {
+  position: relative;
+  padding: 0.48rem 0.8rem;
+  border: 1px solid transparent;
+  border-radius: 0.55rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+a:hover {
+  border-color: var(--border);
+  background: rgb(255 255 255 / 3%);
+  color: var(--text);
+}
+
+a.active {
+  border-color: rgb(99 230 190 / 15%);
+  background: var(--accent-soft);
+  color: var(--accent-bright);
+}
+
+@media (max-width: 600px) {
+  :host { padding: 1rem; }
+}
+
+/* Hover interativo do menu */
+a {
+  transform: translateY(0);
+}
+
+a:hover {
+  transform: translateY(-3px) scale(1.035);
+  border-color: rgb(99 230 190 / 30%);
+  background: linear-gradient(135deg, rgb(99 230 190 / 13%), rgb(99 230 190 / 4%));
+  box-shadow: 0 6px 22px rgb(34 211 160 / 16%), inset 0 0 14px rgb(99 230 190 / 5%);
+}
+
+a.active:hover {
+  color: #c7ffeb;
+  box-shadow: 0 0 24px rgb(34 211 160 / 24%);
+}
