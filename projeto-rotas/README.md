@@ -1,59 +1,78 @@
-# ProjetoRotas
+# Sistema de Cadastro de Usuários
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Aplicação web desenvolvida com **Angular** para praticar navegação entre páginas, componentes standalone e formulários com template forms. O projeto reúne uma página inicial e uma tela para cadastrar e consultar usuários, com uma interface escura, minimalista e responsiva.
 
-## Development server
+> **Desenvolvido por Kayo Sampaio**
 
-To start a local development server, run:
+## Funcionalidades
 
-```bash
-ng serve
+- Navegação entre as páginas **Home** e **Usuários** usando Angular Router.
+- Redirecionamento automático da rota inicial para `/home`.
+- Formulário de cadastro com nome e e-mail, validação dos campos e envio com `ngSubmit`.
+- Exibição dos usuários cadastrados na sessão atual.
+- Interface adaptável para telas menores, com tema escuro, detalhes luminosos e animações sutis.
+- Respeito à preferência do sistema por movimento reduzido.
+
+Os cadastros ficam apenas na memória do navegador: ao atualizar ou fechar a página, a lista é reiniciada. O projeto ainda não utiliza banco de dados nem armazenamento permanente.
+
+## Tecnologias
+
+- Angular 19
+- TypeScript
+- Angular Router
+- Angular Forms (`FormsModule`)
+- CSS
+
+## Como executar
+
+1. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+2. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm start
+   ```
+
+3. Abra [http://localhost:4200](http://localhost:4200) no navegador.
+
+O servidor atualiza a aplicação automaticamente quando os arquivos são alterados.
+
+## Rotas
+
+| Caminho | Página |
+| --- | --- |
+| `/home` | Página inicial |
+| `/usuarios` | Formulário e lista de usuários |
+| `/` | Redireciona para `/home` |
+
+## Estrutura principal
+
+```text
+src/app/
+├── app.ts                 # Componente raiz
+├── app.html               # Header e outlet das rotas
+├── app.routes.ts          # Configuração de navegação
+├── components/
+│   ├── header/            # Cabeçalho e links de navegação
+│   └── footer/            # Componente de rodapé
+├── pages/                 # Página inicial
+└── usuarios/              # Formulário e listagem de usuários
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Build
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Para gerar a versão de produção:
 
 ```bash
-ng generate component component-name
+npm run build
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Os arquivos gerados ficam em `dist/`.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Feito por **Kayo Sampaio**.
